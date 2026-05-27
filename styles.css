@@ -184,3 +184,78 @@ section {
 .footer a {
   color: #9ad1d4;
 }
+/* MODAL */
+
+.hidden {
+  display: none;
+}
+
+.modal {
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+
+  padding: 2rem;
+
+}
+
+.modal-box {
+
+  background: #08111d;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  border-radius: 24px;
+
+  padding: 2rem;
+
+  max-width: 700px;
+  width: 100%;
+
+  color: white;
+
+  max-height: 80vh;
+  overflow-y: auto;
+
+}
+
+.cerrar-modal {
+
+  background: none;
+  border: none;
+
+  color: white;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+
+  float: right;
+
+}
+
+.ver-mas {
+
+  margin-top: 1rem;
+
+  background: transparent;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  color: #9dd7e8;
+
+  padding: 0.7rem 1rem;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+}
