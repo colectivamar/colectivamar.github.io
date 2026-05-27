@@ -1,15 +1,141 @@
 <!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Memoria Arte Resistencia</title>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- FONDO -->
+  <div class="ocean-background"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+      <span class="hero-label">
+        Archivo Vivo Ecofeminista
+      </span>
+
+      <h1>
+        Memoria<br>
+        Arte<br>
+        Resistencia
+      </h1>
+
+      <p class="hero-text">
+        Cada acción deja una ola en el territorio.
+      </p>
+
+    </div>
+
+  </header>
+
+  <!-- MANIFIESTO -->
+  <section class="manifesto">
+
+    <div class="section-intro">
+
+      <span class="section-label">
+        Manifiesto
+      </span>
+
+      <p>
+        Somos una colectiva ecofeminista en Tunja, Boyacá.
+        Habitamos el arte, la memoria y el territorio como
+        formas de resistencia, cuidado y transformación.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ARCHIVO VIVO -->
+  <section id="archivo" class="archivo-section">
+
+    <div class="section-intro">
+
+      <span class="section-label">
+        Archivo Vivo
+      </span>
+
+      <h2>
+        Olas de memoria territorial
+      </h2>
+
+    </div>
+
+    <!-- AQUÍ APARECEN LAS ACTIVIDADES -->
+    <div id="archivo-vivo"></div>
+
+  </section>
+
+  <!-- METODOLOGÍAS -->
+  <section class="method-section">
+
+    <div class="section-intro">
+
+      <span class="section-label">
+        Metodologías
+      </span>
+
+      <h2>
+        Cartografías del cuidado
+      </h2>
+
+    </div>
+
+    <div class="methods-grid">
+
+      <article>
+        <h3>Ecofeminismo</h3>
+      </article>
+
+      <article>
+        <h3>Arte Político</h3>
+      </article>
+
+      <article>
+        <h3>Cartografía Participativa</h3>
+      </article>
+
+      <article>
+        <h3>Cuidado Comunitario</h3>
+      </article>
+
+    </div>
+
   </section>
 
   <!-- MEMORIAS -->
   <section class="memories-section">
 
     <div class="section-intro">
-      <span class="section-label">Memorias</span>
+
+      <span class="section-label">
+        Memorias
+      </span>
 
       <h2>
-        Documentos 
+        Documentos y sistematizaciones
       </h2>
+
     </div>
 
     <div class="documents-grid">
@@ -30,8 +156,8 @@
 
   </section>
 
-  <!-- CONTACTO -->
-  <footer class="footer" id="contacto">
+  <!-- FOOTER -->
+  <footer class="footer">
 
     <div class="footer-content">
 
@@ -51,16 +177,9 @@
 
   </footer>
 
-  <!-- Modal dinámico -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-content" id="modal-content"></div>
-  </div>
-
-  <script src="js/config.js"></script>
-  <script src="js/sheets.js"></script>
-  <script src="js/archive.js"></script>
-  <script src="js/ocean.js"></script>
-  <script src="js/app.js"></script>
+  <!-- SCRIPT -->
   <script src="script.js"></script>
+
 </body>
+
 </html>
