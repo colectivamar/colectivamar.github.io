@@ -1,11 +1,9 @@
-// URL DEL GOOGLE SHEETS EN CSV
 const sheetURL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vS1wk_XxOasJFf41t2DGelvTg8ouTB8S9Na2jPe5QAOlEM8ZOR7yTr8BH-J4pDxJZJMXmkDoYlLipql/pub?gid=0&single=true&output=csv";
 
 const archivoContainer =
   document.getElementById("archivo-vivo");
 
-// MODAL
 const modal =
   document.getElementById("modal");
 
@@ -14,93 +12,57 @@ const modalContent =
 
 async function cargarMemorias() {
 
-  const response =
-    await fetch(sheetURL);
+  const response = await fetch(sheetURL);
 
-  const data =
-    await response.text();
+  const data = await response.text();
 
   const filas =
     data.split("\n").slice(1);
 
   filas.forEach((fila) => {
 
-    const columnas =
-      fila.split(",");
+    const columnas = fila.split(",");
 
-    const fecha =
-      columnas[1];
+    const fecha = columnas[1];
+    const titulo = columnas[2];
+    const lugar = columnas[3];
 
-    const titulo =
-      columnas[2];
+    const descripcion = columnas[4];
+    const categoria = columnas[5];
+    const participantes = columnas[6];
+    const territorio = columnas[7];
+    const aliadas = columnas[8];
+    const instagram = columnas[9];
+    const imagen = columnas[10];
+    const etiquetas = columnas[11];
 
-    const lugar =
-      columnas[3];
+    const ola =
+      document.createElement("div");
 
-    const descripcion =
-      columnas[4];
+    ola.classList.add("ola");
 
-    const categoria =
-      columnas[5];
+    // TARJETA SIMPLE
+    ola.innerHTML = `
 
-    const participantes =
-      columnas[6];
+      <div class="ola-contenido">
 
-    const territorio =
-      columnas[7];
+        <span>${fecha}</span>
 
-    const aliadas =
-      columnas[8];
+        <h3>${titulo}</h3>
 
-    const instagram =
-      columnas[9];
+        <p>${lugar}</p>
 
-    crearOla({
-      fecha,
-      titulo,
-      lugar,
-      descripcion,
-      categoria,
-      participantes,
-      territorio,
-      aliadas,
-      instagram
-    });
+        <button class="ver-mas">
+          Ver más
+        </button>
 
-  });
+      </div>
 
-}
+    `;
 
-function crearOla(data) {
-
-  const ola =
-    document.createElement("div");
-
-  ola.classList.add("ola");
-
-  ola.innerHTML = `
-  
-    <div class="ola-contenido">
-
-      <span>${data.categoria}</span>
-
-      <h3>${data.titulo}</h3>
-
-      <p>${data.lugar}</p>
-
-      <br>
-
-      <button class="ver-mas">
-        Ver más
-      </button>
-
-    </div>
-  
-  `;
-
-  // BOTÓN VER MÁS
-  ola.querySelector(".ver-mas")
-    .addEventListener("click", () => {
+    // BOTÓN
+    ola.querySelector(".ver-mas")
+      .addEventListener("click", () => {
 
       modal.classList.remove("hidden");
 
@@ -110,31 +72,28 @@ function crearOla(data) {
           ✕
         </button>
 
-        <span>${data.categoria}</span>
+        <h2>${titulo}</h2>
 
-        <h2>${data.titulo}</h2>
+        <p><strong>Descripción:</strong><br>${descripcion}</p>
 
-        <p><strong>Fecha:</strong> ${data.fecha}</p>
+        <p><strong>Categoría:</strong> ${categoria}</p>
 
-        <p><strong>Lugar:</strong> ${data.lugar}</p>
+        <p><strong>Participantes:</strong> ${participantes}</p>
 
-        <p>${data.descripcion}</p>
+        <p><strong>Territorio:</strong> ${territorio}</p>
 
-        <p><strong>Participantes:</strong> ${data.participantes}</p>
+        <p><strong>Aliadas:</strong> ${aliadas}</p>
 
-        <p><strong>Territorio:</strong> ${data.territorio}</p>
-
-        <p><strong>Aliadas:</strong> ${data.aliadas}</p>
+        <p><strong>Etiquetas:</strong> ${etiquetas}</p>
 
         <br>
 
-        <a href="${data.instagram}" target="_blank">
+        <a href="${instagram}" target="_blank">
           Ver publicación ↗
         </a>
 
       `;
 
-      // CERRAR MODAL
       document.querySelector(".cerrar-modal")
         .addEventListener("click", () => {
 
@@ -142,9 +101,11 @@ function crearOla(data) {
 
       });
 
-  });
+    });
 
-  archivoContainer.appendChild(ola);
+    archivoContainer.appendChild(ola);
+
+  });
 
 }
 
