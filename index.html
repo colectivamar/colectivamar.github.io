@@ -1,437 +1,66 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memoria Arte Resistencia — Colectiva Ecofeminista, Tunja</title>
-  <meta name="description" content="Colectiva ecofeminista en Tunja, Boyacá. Archivo vivo de acciones, memoria territorial y resistencia creativa." />
+  </section>
 
-  <!-- Tipografías artísticas -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <!-- MEMORIAS -->
+  <section class="memories-section">
 
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+    <div class="section-intro">
+      <span class="section-label">Memorias</span>
 
-  <!-- ══════════════════════════════════════
-       CURSOR PERSONALIZADO
-  ══════════════════════════════════════ -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <!-- ══════════════════════════════════════
-       CANVAS DE OLAS (fondo animado)
-  ══════════════════════════════════════ -->
-  <canvas id="ocean-canvas"></canvas>
-
-  <!-- ══════════════════════════════════════
-       NAVEGACIÓN
-  ══════════════════════════════════════ -->
-  <nav class="nav" id="main-nav">
-    <div class="nav-logo">
-      <span class="nav-logo-symbol">🌊</span>
-      <span class="nav-logo-text">MAR</span>
+      <h2>
+        Documentos 
+      </h2>
     </div>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#archivo">Archivo Vivo</a></li>
-      <li><a href="#metodologia">Metodología</a></li>
-      <li><a href="#territorios">Territorios</a></li>
-      <li><a href="#aliadas">Aliadas</a></li>
-      <li><a href="#impacto">Impacto</a></li>
-      <li><a href="#memorias">Memorias</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
 
-  <!-- ══════════════════════════════════════
-       SECCIÓN 1: INICIO / PORTADA
-  ══════════════════════════════════════ -->
-  <section id="inicio" class="hero">
-    <div class="hero-content">
-      <p class="hero-pre">Colectiva Ecofeminista · Tunja, Boyacá</p>
-      <h1 class="hero-title">
-        <em>Memoria</em><br/>
-        Arte<br/>
-        <span class="hero-title-accent">Resistencia</span>
-      </h1>
-      <blockquote class="hero-manifiesto">
-        "Cada acción deja una ola en el territorio.<br/>
-        Somos cartografía viva,<br/>
-        archivo del cuidado,<br/>
-        marea que no retrocede."
-      </blockquote>
-      <a href="#archivo" class="btn-ola">
-        <span>Explorar el archivo</span>
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <div class="documents-grid">
+
+      <article class="document-card">
+        <span>PDF</span>
+        <h3>Sistematización Territorial</h3>
+        <a href="#">Descargar</a>
+      </article>
+
+      <article class="document-card">
+        <span>PDF</span>
+        <h3>Metodologías Ecofeministas</h3>
+        <a href="#">Descargar</a>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACTO -->
+  <footer class="footer" id="contacto">
+
+    <div class="footer-content">
+
+      <h2>
+        Memoria Arte Resistencia
+      </h2>
+
+      <p>
+        Tunja, Boyacá · Colombia
+      </p>
+
+      <a href="https://instagram.com" target="_blank">
+        Instagram
       </a>
+
     </div>
-    <div class="hero-scroll-hint">
-      <div class="scroll-line"></div>
-    </div>
-  </section>
 
-  <!-- ══════════════════════════════════════
-       SECCIÓN 2: ARCHIVO VIVO
-  ══════════════════════════════════════ -->
-  <section id="archivo" class="section-archivo">
-    <div class="container">
-      <header class="section-header">
-        <span class="section-label">🌊 Archivo Vivo</span>
-        <h2 class="section-title">Olas en el territorio</h2>
-        <p class="section-desc">Cada acción es una corriente. Filtra por año, categoría o territorio para navegar la memoria colectiva.</p>
-      </header>
-
-      <!-- Filtros -->
-      <div class="filtros" id="filtros">
-        <div class="filtro-grupo">
-          <label>Categoría</label>
-          <div class="filtro-chips" id="filtro-categoria">
-            <button class="chip activo" data-filtro="categoria" data-valor="todas">Todas</button>
-          </div>
-        </div>
-        <div class="filtro-grupo">
-          <label>Año</label>
-          <div class="filtro-chips" id="filtro-anio">
-            <button class="chip activo" data-filtro="anio" data-valor="todos">Todos</button>
-          </div>
-        </div>
-        <div class="filtro-grupo">
-          <label>Territorio</label>
-          <div class="filtro-chips" id="filtro-territorio">
-            <button class="chip activo" data-filtro="territorio" data-valor="todos">Todos</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Estado de carga -->
-      <div id="archivo-estado" class="archivo-estado">
-        <div class="cargando">
-          <div class="ola-cargando"></div>
-          <p>Convocando las memorias…</p>
-        </div>
-      </div>
-
-      <!-- Grid de olas/tarjetas -->
-      <div class="olas-grid" id="olas-grid"></div>
-
-      <!-- Mensaje si no hay datos conectados -->
-      <div class="demo-aviso" id="demo-aviso">
-        <div class="demo-aviso-inner">
-          <span>⚙️</span>
-          <p><strong>Modo demostración activo.</strong> Para conectar tu Google Sheets real, edita <code>js/config.js</code> con tu URL de hoja pública. <a href="#instrucciones-sheets">Ver instrucciones ↓</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SECCIÓN 3: METODOLOGÍA
-  ══════════════════════════════════════ -->
-  <section id="metodologia" class="section-metodologia">
-    <div class="container">
-      <header class="section-header">
-        <span class="section-label">🌿 Metodología</span>
-        <h2 class="section-title">Cómo navegamos</h2>
-        <p class="section-desc">Nuestras metodologías son corrientes que nos guían: prácticas vivas, situadas y en permanente transformación.</p>
-      </header>
-      <div class="metodologias-grid">
-        <div class="metodologia-card">
-          <div class="met-icono">🌊</div>
-          <h3>Ecofeminismo</h3>
-          <p>Tejemos las luchas del cuerpo, el territorio y la naturaleza como una sola resistencia. Reconocemos que la opresión de las mujeres y la devastación de la tierra tienen la misma raíz.</p>
-        </div>
-        <div class="metodologia-card">
-          <div class="met-icono">🗺️</div>
-          <h3>Cartografía Participativa</h3>
-          <p>Mapeamos con las comunidades sus propias geografías del cuidado, el miedo y el deseo. Los mapas que hacemos no son neutrales: son políticos y poéticos.</p>
-        </div>
-        <div class="metodologia-card">
-          <div class="met-icono">🎨</div>
-          <h3>Arte Político</h3>
-          <p>El arte es herramienta de memoria y transformación. Muros, performances, bordados y sonidos como actos de resistencia territorial.</p>
-        </div>
-        <div class="metodologia-card">
-          <div class="met-icono">🤝</div>
-          <h3>Cuidado Comunitario</h3>
-          <p>Practicamos metodologías de cuidado mutuo: círculos de palabra, economías del afecto y sostenibilidad de la vida como horizonte político.</p>
-        </div>
-        <div class="metodologia-card">
-          <div class="met-icono">🧒</div>
-          <h3>Trabajo con Infancias</h3>
-          <p>Las niñeces como sujetas políticas. Creamos espacios de juego, memoria y creación donde las infancias nombran y protegen sus territorios.</p>
-        </div>
-        <div class="metodologia-card">
-          <div class="met-icono">🌱</div>
-          <h3>Defensa del Territorio</h3>
-          <p>Articulamos procesos de defensa territorial desde la memoria, la identidad y la organización comunitaria en los Andes boyacenses.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SECCIÓN 4: TERRITORIOS
-  ══════════════════════════════════════ -->
-  <section id="territorios" class="section-territorios">
-    <div class="container">
-      <header class="section-header">
-        <span class="section-label">📍 Territorios</span>
-        <h2 class="section-title">Donde hemos dejado olas</h2>
-        <p class="section-desc">Los territorios que hemos habitado, intervenido y cuidado.</p>
-      </header>
-      <div class="territorios-lista" id="territorios-lista">
-        <!-- Se llena dinámicamente desde los datos de Sheets -->
-        <div class="territorio-item">
-          <span class="territorio-punto"></span>
-          <div>
-            <strong>Tunja</strong>
-            <span>Capital, Boyacá</span>
-          </div>
-        </div>
-        <div class="territorio-item">
-          <span class="territorio-punto"></span>
-          <div>
-            <strong>Duitama</strong>
-            <span>Boyacá</span>
-          </div>
-        </div>
-        <div class="territorio-item">
-          <span class="territorio-punto"></span>
-          <div>
-            <strong>Villa de Leyva</strong>
-            <span>Boyacá</span>
-          </div>
-        </div>
-        <div class="territorio-item">
-          <span class="territorio-punto"></span>
-          <div>
-            <strong>Chiquinquirá</strong>
-            <span>Boyacá</span>
-          </div>
-        </div>
-      </div>
-      <div class="mapa-placeholder">
-        <div class="mapa-inner">
-          <p class="mapa-texto">🗺️ Mapa interactivo de territorios</p>
-          <p class="mapa-subtexto">Activa la integración con Google Sheets para ver los territorios de tus acciones aquí.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SECCIÓN 5: ALIADAS
-  ══════════════════════════════════════ -->
-  <section id="aliadas" class="section-aliadas">
-    <div class="container">
-      <header class="section-header">
-        <span class="section-label">🌐 Aliadas</span>
-        <h2 class="section-title">Corrientes que confluyen</h2>
-        <p class="section-desc">Organizaciones, colectivas y articulaciones con las que tejemos resistencia.</p>
-      </header>
-      <div class="aliadas-grid" id="aliadas-grid">
-        <!-- Se pobla dinámicamente -->
-        <div class="aliada-chip">Colectivas Feministas Boyacá</div>
-        <div class="aliada-chip">Red de Mujeres Rurales</div>
-        <div class="aliada-chip">Proceso de Comunidades Negras</div>
-        <div class="aliada-chip">Congreso de los Pueblos</div>
-        <div class="aliada-chip">PNUD Colombia</div>
-        <div class="aliada-chip">Universidades Regionales</div>
-        <div class="aliada-chip">Jardines Comunitarios</div>
-        <div class="aliada-chip">Grupos de Teatro Popular</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SECCIÓN 6: IMPACTO
-  ══════════════════════════════════════ -->
-  <section id="impacto" class="section-impacto">
-    <div class="container">
-      <header class="section-header">
-        <span class="section-label">📊 Impacto</span>
-        <h2 class="section-title">La marea en números</h2>
-        <p class="section-desc">Indicadores que se actualizan automáticamente desde el archivo vivo.</p>
-      </header>
-      <div class="impacto-grid">
-        <div class="impacto-card">
-          <span class="impacto-numero" id="contador-acciones">0</span>
-          <span class="impacto-label">Acciones</span>
-          <span class="impacto-icono">🌊</span>
-        </div>
-        <div class="impacto-card">
-          <span class="impacto-numero" id="contador-participantes">0</span>
-          <span class="impacto-label">Participantes</span>
-          <span class="impacto-icono">🤝</span>
-        </div>
-        <div class="impacto-card">
-          <span class="impacto-numero" id="contador-territorios">0</span>
-          <span class="impacto-label">Territorios</span>
-          <span class="impacto-icono">📍</span>
-        </div>
-        <div class="impacto-card">
-          <span class="impacto-numero" id="contador-aliadas">0</span>
-          <span class="impacto-label">Alianzas</span>
-          <span class="impacto-icono">🌿</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SECCIÓN 7: MEMORIAS / DOCUMENTOS
-  ══════════════════════════════════════ -->
-  <section id="memorias" class="section-memorias">
-    <div class="container">
-      <header class="section-header">
-        <span class="section-label">📁 Memorias</span>
-        <h2 class="section-title">Documentos del agua</h2>
-        <p class="section-desc">Sistematizaciones, informes y memorias descargables de nuestros procesos.</p>
-      </header>
-      <div class="docs-grid" id="docs-grid">
-        <!-- Ejemplo — reemplazar con tus documentos reales -->
-        <div class="doc-card">
-          <div class="doc-tipo">PDF</div>
-          <h4>Sistematización 2022</h4>
-          <p>Memoria del proceso anual de acciones ecofeministas en Boyacá.</p>
-          <a href="#" class="doc-link">Descargar ↓</a>
-        </div>
-        <div class="doc-card">
-          <div class="doc-tipo">PDF</div>
-          <h4>Metodología MAR</h4>
-          <p>Guía de metodologías para cartografía participativa con perspectiva ecofeminista.</p>
-          <a href="#" class="doc-link">Descargar ↓</a>
-        </div>
-        <div class="doc-card">
-          <div class="doc-tipo">PDF</div>
-          <h4>Informe de Convocatoria</h4>
-          <p>Portafolio institucional para presentación en convocatorias nacionales.</p>
-          <a href="#" class="doc-link">Descargar ↓</a>
-        </div>
-      </div>
-
-      <!-- ─── Instrucciones para Sheets ─── -->
-      <div class="instrucciones-sheets" id="instrucciones-sheets">
-        <h3>⚙️ Cómo conectar Google Sheets</h3>
-        <div class="instrucciones-pasos">
-          <div class="paso">
-            <span class="paso-num">01</span>
-            <div>
-              <strong>Crea tu hoja de Google Sheets</strong>
-              <p>Crea una hoja con las columnas exactas: <code>id, fecha, titulo, lugar, descripcion, categoria, participantes, territorio, aliadas, instagram, imagen, etiquetas, emociones, enfoque</code></p>
-            </div>
-          </div>
-          <div class="paso">
-            <span class="paso-num">02</span>
-            <div>
-              <strong>Publica la hoja</strong>
-              <p>Ve a <em>Archivo → Compartir → Publicar en la web</em>. Elige la hoja, formato <strong>CSV</strong>, y copia el enlace generado.</p>
-            </div>
-          </div>
-          <div class="paso">
-            <span class="paso-num">03</span>
-            <div>
-              <strong>Pega la URL en config.js</strong>
-              <p>Abre el archivo <code>js/config.js</code> y reemplaza el valor de <code>SHEETS_URL</code> con tu enlace. ¡Listo! La página cargará tus datos automáticamente.</p>
-            </div>
-          </div>
-          <div class="paso">
-            <span class="paso-num">04</span>
-            <div>
-              <strong>Para Instagram</strong>
-              <p>Pega el link completo del post/reel en la columna <code>instagram</code> (ej: <code>https://www.instagram.com/p/ABC123/</code>). La web lo incrustará automáticamente.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       SECCIÓN 8: CONTACTO
-  ══════════════════════════════════════ -->
-  <section id="contacto" class="section-contacto">
-    <div class="container">
-      <header class="section-header section-header--light">
-        <span class="section-label">✉️ Contacto</span>
-        <h2 class="section-title">Escríbenos una ola</h2>
-        <p class="section-desc">¿Quieres articularte, colaborar o conocernos? Estamos aquí.</p>
-      </header>
-      <div class="contacto-grid">
-        <div class="contacto-info">
-          <div class="contacto-item">
-            <span>📍</span>
-            <div>
-              <strong>Ubicación</strong>
-              <p>Tunja, Boyacá — Colombia</p>
-            </div>
-          </div>
-          <div class="contacto-item">
-            <span>📸</span>
-            <div>
-              <strong>Instagram</strong>
-              <!-- Reemplaza con tu usuario real -->
-              <p><a href="https://instagram.com/mar.colectiva" target="_blank">@mar.colectiva</a></p>
-            </div>
-          </div>
-          <div class="contacto-item">
-            <span>✉️</span>
-            <div>
-              <strong>Correo</strong>
-              <!-- Reemplaza con tu correo real -->
-              <p><a href="mailto:memoriaarteresissistencia@gmail.com">memoriaarteresissistencia@gmail.com</a></p>
-            </div>
-          </div>
-        </div>
-        <form class="contacto-form" id="contacto-form">
-          <input type="text" placeholder="Tu nombre o colectiva" name="nombre" />
-          <input type="email" placeholder="Correo electrónico" name="correo" />
-          <textarea placeholder="¿Qué ola quieres compartir con nosotras?" name="mensaje" rows="5"></textarea>
-          <button type="submit" class="btn-ola btn-ola--light">
-            <span>Enviar mensaje</span>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-          </button>
-          <p class="form-nota">*El formulario puede configurarse con Formspree o Netlify Forms. Ver <code>js/config.js</code>.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <span>🌊</span>
-        <strong>Memoria Arte Resistencia</strong>
-      </div>
-      <p class="footer-frase">"Somos marea, somos memoria, somos resistencia."</p>
-      <p class="footer-legal">Colectiva Ecofeminista · Tunja, Boyacá, Colombia</p>
-    </div>
   </footer>
 
-  <!-- ══════════════════════════════════════
-       MODAL DE DETALLE DE OLA
-  ══════════════════════════════════════ -->
-  <div class="modal-overlay" id="modal-overlay">
-    <div class="modal" id="modal">
-      <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
-      <div class="modal-contenido" id="modal-contenido"></div>
-    </div>
+  <!-- Modal dinámico -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content" id="modal-content"></div>
   </div>
 
-  <!-- Scripts -->
   <script src="js/config.js"></script>
+  <script src="js/sheets.js"></script>
+  <script src="js/archive.js"></script>
   <script src="js/ocean.js"></script>
-  <script src="js/datos.js"></script>
-  <script src="js/ui.js"></script>
   <script src="js/app.js"></script>
+
 </body>
 </html>
