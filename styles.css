@@ -14,22 +14,17 @@ body {
 /* FONDO */
 
 .ocean-background {
-
-  position: fixed;
-  inset: 0;
-
   background:
     linear-gradient(
       rgba(5, 10, 20, 0.82),
       rgba(5, 10, 20, 0.92)
     ),
-    url("./assets/oceano.jpg");
-
+    url("https://colectivamar.github.io/assets/oceano.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
+}
   z-index: -1;
 
   filter: saturate(0.9);
