@@ -1,4 +1,4 @@
-const sheetURL =
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS1wk_XxOasJFf41t2DGelvTg8ouTB8S9Na2jPe5QAOlEM8ZOR7yTr8BH-J4pDxJZJMXmkDoYlLipql/pub?gid=0&single=true&output=csv";
   
 const archivoContainer = document.getElementById("archivo-vivo");
 const modal = document.getElementById("modal");
