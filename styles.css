@@ -65,7 +65,9 @@ body {
   font-size: 1.3rem;
   opacity: 0.9;
 }
-
+.hero-overlay {
+  display: none;
+}
 /* SECCIONES */
 
 section {
