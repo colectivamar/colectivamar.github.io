@@ -77,11 +77,18 @@ async function cargarMemorias() {
           <a href="${instagram}" target="_blank" rel="noopener">Ver publicación ↗</a>
         `;
 
-        document.querySelector(".cerrar-modal").addEventListener("click", () => {
-          modal.classList.add("hidden");
-        });
-      });
+        const cerrarBtn =
+  document.querySelector(".cerrar-modal");
 
+if (cerrarBtn) {
+
+  cerrarBtn.addEventListener("click", () => {
+
+    modal.classList.add("hidden");
+
+  });
+
+}
       archivoContainer.appendChild(ola);
     });
 
